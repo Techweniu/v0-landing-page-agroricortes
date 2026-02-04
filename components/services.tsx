@@ -7,13 +7,13 @@ const services = [
     id: 1,
     title: "Transporte de Maquinários Agrícolas",
     description: "Transporte especializado de tratores e colheitadeiras, com foco total na segurança da carga e no cumprimento rigoroso dos prazos.",
-    image: "/images/transporteequipa.webp", 
+    image: "/images/imagemeditada.webp", // Trocado (estava no item 2)
   },
   {
     id: 2,
     title: "Transporte de Peças Industriais",
     description: "Logística eficiente para indústrias, garantindo a integridade e precisão na entrega de grandes peças e componentes.",
-    image: "/images/imagemeditada.webp", 
+    image: "/images/transporteequipa.webp", // Trocado (estava no item 1)
   },
   {
     id: 3,
@@ -45,12 +45,14 @@ export default function Services() {
         {/* Lista Vertical */}
         <div className="flex flex-col gap-10">
           {services.map((item) => {
-            // Lógica para aplicar zoom extra apenas no item 2 (Peças Industriais)
-            const isSpecialItem = item.id === 2;
+            // Lógica ajustada: O zoom acompanha a imagem 'imagemeditada' (que agora está no ID 1)
+            // Se você preferir que o zoom fique na categoria 'Peças' (ID 2), basta mudar para item.id === 2
+            const isSpecialItem = item.id === 1; 
+            
             const imageClasses = `w-full h-full object-cover transition-transform duration-500 ${
               isSpecialItem 
-                ? "scale-125 hover:scale-150" // Zoom inicial de 25% e hover para 50%
-                : "hover:scale-110"          // Padrão para os outros
+                ? "scale-125 hover:scale-150" // Zoom mantido para esta imagem específica
+                : "hover:scale-110"
             }`;
 
             return (
