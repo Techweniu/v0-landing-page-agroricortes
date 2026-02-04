@@ -19,16 +19,15 @@ export default function Footer() {
          <div className="absolute inset-0 bg-gradient-to-r from-white via-transparent to-white"></div>
       </div>
 
-      {/* Recorte Plantação Algodão (Canto Superior Direito) - AJUSTADO */}
+      {/* Recorte Plantação Algodão (Canto Superior Direito) */}
       <div className="absolute top-0 right-0 w-[40%] md:w-[30%] h-[200px] pointer-events-none z-0">
-          {/* Adicionei gradientes para suavizar a transição e não brigar com o texto */}
           <div className="absolute inset-0 bg-gradient-to-l from-transparent via-white/50 to-white z-10"></div>
           <div className="absolute inset-0 bg-gradient-to-b from-transparent to-white z-10"></div>
           
           <img 
             src="/images/colheitaalgodao.webp" 
             alt="Detail Crop" 
-            className="w-full h-full object-cover rounded-bl-[100px] opacity-25" // Opacidade reduzida para 25%
+            className="w-full h-full object-cover rounded-bl-[100px] opacity-25" 
           />
       </div>
 
@@ -109,9 +108,13 @@ export default function Footer() {
            </div>
         </div>
 
-        {/* Copyright simples */}
-        <div className="text-center pt-8 border-t border-gray-100 mt-8">
+        {/* Copyright e Créditos */}
+        <div className="text-center pt-8 border-t border-gray-100 mt-8 flex flex-col md:flex-row justify-center items-center gap-2">
            <p className="text-gray-400 text-sm">© {new Date().getFullYear()} AgroRicôrtes. Todos os direitos reservados.</p>
+           <span className="hidden md:inline text-gray-300">|</span>
+           <p className="text-gray-400 text-sm">
+             Desenvolvido por <a href="https://www.weniu.com.br" target="_blank" rel="noreferrer" className="font-bold hover:text-[#ff6600] transition-colors">weniu</a>
+           </p>
         </div>
 
       </div>
