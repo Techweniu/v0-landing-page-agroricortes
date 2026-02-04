@@ -31,7 +31,7 @@ export default function About() {
             {/* Image for mobile/tablet in flow */}
             <div className="lg:hidden mb-12">
               <img
-                src="https://picsum.photos/600/400?random=7"
+                src="/images/imagemcolhendo.webp"
                 alt="Agro Field"
                 className="rounded-lg shadow-xl w-full"
               />
@@ -100,7 +100,7 @@ export default function About() {
             <div className="absolute right-0 top-0 w-full h-full">
               <div className="relative w-full h-full">
                 <img
-                  src="https://picsum.photos/600/800?random=8"
+                  src="/images/imagemcolhendo.webp"
                   alt="Agro Machine"
                   className="rounded-l-[100px] shadow-2xl object-cover w-full h-full border-8 border-white"
                 />
