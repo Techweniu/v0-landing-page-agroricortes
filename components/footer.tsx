@@ -18,10 +18,10 @@ const Footer: React.FC = () => {
                Soluções agrícolas completas. Da pulverização ao transporte, conectando o campo ao futuro com eficiência e tecnologia.
              </p>
              <div className="flex gap-4">
-               <a href="#" className="bg-[#417641] hover:bg-[#ff6600] p-2 rounded-full transition-colors">
+               <a href="https://instagram.com" target="_blank" rel="noreferrer" className="bg-[#417641] hover:bg-[#ff6600] p-2 rounded-full transition-colors">
                   <Instagram size={20} />
                </a>
-               <a href="#" className="bg-[#417641] hover:bg-[#ff6600] p-2 rounded-full transition-colors">
+               <a href="https://facebook.com" target="_blank" rel="noreferrer" className="bg-[#417641] hover:bg-[#ff6600] p-2 rounded-full transition-colors">
                   <Facebook size={20} />
                </a>
              </div>
@@ -42,17 +42,30 @@ const Footer: React.FC = () => {
           <div>
             <h3 className="text-xl font-bold mb-6 text-[#ff6600]">Contato</h3>
             <ul className="space-y-4 text-gray-300">
+               {/* Endereço */}
                <li className="flex items-start gap-3">
                   <MapPin className="text-[#417641] flex-shrink-0 mt-1" size={20} />
-                  <span>Av. Exemplo, 123 - Centro<br />Sua Cidade - SP</span>
+                  <span>
+                    Rua João Manoel de Souza, 819<br />
+                    Apt 204 Sala A - Centro<br />
+                    Itumbiara - GO, 75503-162
+                  </span>
                </li>
+               
+               {/* Telefone / WhatsApp */}
                <li className="flex items-center gap-3">
                   <Phone className="text-[#417641] flex-shrink-0" size={20} />
-                  <span>(00) 00000-0000</span>
+                  <a href="https://wa.me/556493311111" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">
+                    (64) 9331-1111
+                  </a>
                </li>
+               
+               {/* E-mail */}
                <li className="flex items-center gap-3">
                   <Mail className="text-[#417641] flex-shrink-0" size={20} />
-                  <span>contato@agroricortes.com.br</span>
+                  <a href="mailto:agroricortes@outlook.com" className="hover:text-white transition-colors">
+                    agroricortes@outlook.com
+                  </a>
                </li>
             </ul>
           </div>
