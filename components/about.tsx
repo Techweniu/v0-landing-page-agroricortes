@@ -1,64 +1,119 @@
-import React from 'react';
-import { Target, Heart, Lightbulb, CheckCircle2 } from 'lucide-react';
+import { Target, Eye, Heart } from "lucide-react";
 
-const About: React.FC = () => {
+export default function About() {
   return (
-    <section id="about" className="py-20 bg-[#f8f9fa]">
-      <div className="container mx-auto px-6 max-w-6xl">
-        
-        {/* Cabeçalho */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-6">
-            Nossa <span className="text-[#ff6600]">Essência</span>
-          </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-            Mais do que serviços, entregamos compromisso e resultados para quem move o mundo.
-          </p>
+    <section id="about" className="py-24 bg-white overflow-hidden relative">
+      {/* Decorative BG element */}
+      <div className="absolute top-0 right-0 w-1/3 h-full bg-[#005e00] rounded-l-[100px] opacity-10 hidden lg:block" />
+
+      <div className="container mx-auto px-6 max-w-6xl relative z-10">
+        <div className="flex flex-col lg:flex-row gap-16 items-start">
+          {/* Left Text Content */}
+          <div className="w-full lg:w-1/2">
+            <div className="mb-8">
+              <span className="text-[#ff6600] font-bold tracking-widest text-sm block mb-2">
+                SOBRE NÓS
+              </span>
+              <h2 className="text-4xl md:text-5xl font-bold text-[#005e00] mb-6">
+                Por que o nome <br /> AgroRicôrtes?
+              </h2>
+              <p className="text-gray-600 text-lg leading-relaxed mb-6">
+                Nosso nome é uma homenagem às famílias Ribeiro e Côrtes, que se
+                uniram para criar uma empresa sólida e comprometida com o setor
+                agroindustrial.
+              </p>
+              <p className="text-xl italic text-[#417641] font-semibold border-l-4 border-[#ff6600] pl-4">
+                Eficiência e Inovação a serviço da produtividade e melhores
+                resultados para a sua empresa.
+              </p>
+            </div>
+
+            {/* Image for mobile/tablet in flow */}
+            <div className="lg:hidden mb-12">
+              <img
+                src="https://picsum.photos/600/400?random=7"
+                alt="Agro Field"
+                className="rounded-lg shadow-xl w-full"
+              />
+            </div>
+
+            <div className="grid gap-8">
+              <div className="flex gap-4">
+                <div className="mt-1">
+                  <div className="w-12 h-12 bg-[#ff6600] rounded-full flex items-center justify-center text-white shadow-md">
+                    <Target size={24} />
+                  </div>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-[#005e00] mb-2">
+                    Missão
+                  </h3>
+                  <p className="text-gray-600">
+                    Atender as necessidades dos clientes do setor agrícola com
+                    qualidade, eficiência e produtividade, contribuindo
+                    diretamente para seus resultados no plantio e na colheita.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex gap-4">
+                <div className="mt-1">
+                  <div className="w-12 h-12 bg-[#ff6600] rounded-full flex items-center justify-center text-white shadow-md">
+                    <Eye size={24} />
+                  </div>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-[#005e00] mb-2">
+                    Visão
+                  </h3>
+                  <p className="text-gray-600">
+                    Ser referência no setor agrícola, garantindo segurança e
+                    bem-estar aos colaboradores, crescimento sustentável e
+                    rentável. Buscamos atender nossos clientes com qualidade e
+                    responsabilidade.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex gap-4">
+                <div className="mt-1">
+                  <div className="w-12 h-12 bg-[#ff6600] rounded-full flex items-center justify-center text-white shadow-md">
+                    <Heart size={24} />
+                  </div>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-[#005e00] mb-2">
+                    Valores
+                  </h3>
+                  <p className="text-gray-600">
+                    Valorizamos o bem-estar e a saúde das pessoas, promovendo
+                    relacionamentos sólidos e respeitosos. Atuação pautada pela
+                    responsabilidade e compromisso.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Image Content (Desktop) */}
+          <div className="hidden lg:block w-1/2 relative h-full min-h-[600px]">
+            <div className="absolute right-0 top-0 w-full h-full">
+              <div className="relative w-full h-full">
+                <img
+                  src="https://picsum.photos/600/800?random=8"
+                  alt="Agro Machine"
+                  className="rounded-l-[100px] shadow-2xl object-cover w-full h-full border-8 border-white"
+                />
+                <div className="absolute -bottom-10 -left-10 bg-white p-6 rounded-lg shadow-xl max-w-xs">
+                  <p className="text-[#005e00] font-bold text-lg">
+                    "Compromisso com o futuro do campo."
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-
-        {/* Grid de Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          
-          {/* Card Missão */}
-          <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow border-b-4 border-[#ff6600]">
-            <div className="bg-[#ff6600]/10 w-16 h-16 rounded-full flex items-center justify-center mb-6 text-[#ff6600]">
-              <Target size={32} />
-            </div>
-            <h3 className="text-2xl font-bold mb-4 text-gray-800">Missão</h3>
-            <p className="text-gray-600 leading-relaxed">
-              Oferecer soluções logísticas e de pulverização com excelência, garantindo agilidade e segurança para impulsionar a produtividade no campo e na indústria.
-            </p>
-          </div>
-
-          {/* Card Visão */}
-          <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow border-b-4 border-[#417641]">
-            <div className="bg-[#417641]/10 w-16 h-16 rounded-full flex items-center justify-center mb-6 text-[#417641]">
-              <Lightbulb size={32} />
-            </div>
-            <h3 className="text-2xl font-bold mb-4 text-gray-800">Visão</h3>
-            <p className="text-gray-600 leading-relaxed">
-              Ser referência nacional em serviços agrícolas e transporte, reconhecida pela inovação, confiabilidade e pelo compromisso com o crescimento sustentável de nossos parceiros.
-            </p>
-          </div>
-
-          {/* Card Valores */}
-          <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow border-b-4 border-[#ff6600]">
-            <div className="bg-[#ff6600]/10 w-16 h-16 rounded-full flex items-center justify-center mb-6 text-[#ff6600]">
-              <Heart size={32} />
-            </div>
-            <h3 className="text-2xl font-bold mb-4 text-gray-800">Valores</h3>
-            <ul className="space-y-3 text-gray-600">
-              <li className="flex items-center gap-2"><CheckCircle2 size={18} className="text-[#417641]" /> Ética e Transparência</li>
-              <li className="flex items-center gap-2"><CheckCircle2 size={18} className="text-[#417641]" /> Compromisso com o Cliente</li>
-              <li className="flex items-center gap-2"><CheckCircle2 size={18} className="text-[#417641]" /> Qualidade e Segurança</li>
-              <li className="flex items-center gap-2"><CheckCircle2 size={18} className="text-[#417641]" /> Inovação Constante</li>
-            </ul>
-          </div>
-        </div>
-
       </div>
     </section>
   );
-};
-
-export default About;
+}
