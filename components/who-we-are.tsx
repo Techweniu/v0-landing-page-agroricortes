@@ -1,4 +1,4 @@
-import { Instagram } from "lucide-react";
+import { Instagram } from "lucide-react"
 
 export default function WhoWeAre() {
   return (
@@ -7,9 +7,9 @@ export default function WhoWeAre() {
         <div className="flex flex-col md:flex-row items-center gap-12">
           <div className="w-full md:w-1/2 flex justify-center">
             <div className="relative">
-              <div className="absolute top-4 left-4 w-full h-full border-4 border-[#417641] rounded-lg -z-10" />
+              <div className="absolute top-4 left-4 w-full h-full border-4 border-[#417641] rounded-lg -z-10"></div>
               <img
-                src="https://picsum.photos/600/500?random=2"
+                src="/images/chapeu.webp"
                 alt="Quem somos"
                 className="rounded-lg shadow-2xl w-full max-w-md object-cover"
               />
@@ -20,19 +20,17 @@ export default function WhoWeAre() {
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               QUEM <span className="text-[#005e00]">SOMOS?</span>
             </h2>
-            <div className="text-gray-700 text-lg flex flex-col gap-6 leading-relaxed">
+            <div className="text-gray-700 text-lg space-y-6 leading-relaxed">
               <p>
-                A AgroRicôrtes é uma empresa especializada em pulverização,
-                transporte de maquinários agrícolas e peças industriais.
+                A AgroRicôrtes é uma empresa especializada em pulverização, transporte de maquinários agrícolas e peças
+                industriais.
               </p>
               <p>
-                Prestamos serviços com segurança, compromisso e respeito aos
-                agricultores e empresas do setor, garantindo produtividade e
-                alto desempenho nas operações.
+                Prestamos serviços com segurança, compromisso e respeito aos agricultores e empresas do setor,
+                garantindo produtividade e alto desempenho nas operações.
               </p>
               <p className="font-bold text-xl text-[#417641]">
-                Ajudando a produzir com eficiência, cuidando com
-                responsabilidade.
+                Ajudando a produzir com eficiência, cuidando com responsabilidade.
               </p>
             </div>
 
@@ -51,5 +49,5 @@ export default function WhoWeAre() {
         </div>
       </div>
     </section>
-  );
+  )
 }
