@@ -2,26 +2,26 @@ import { Sprout, Truck, Settings, Wheat } from "lucide-react"
 
 const services = [
   {
-    icon: <Sprout size={24} className="text-white" />, // Tamanho ajustado para caber perfeito
-    image: "/images/imagemdrone.webp",
+    icon: <Sprout size={24} className="text-white" />,
+    image: "/images/imagemdrone.webp", // Drone
     title: "Soluções para o Agronegócio",
     desc: "Oferecemos soluções completas em pulverização e logística agrícola para grandes propriedades rurais, usinas e produtores, garantindo eficiência e alta produtividade no campo.",
   },
   {
     icon: <Truck size={24} className="text-white" />,
-    image: "/images/colheitacampoaberto.webp",
+    image: "/images/transporteequipa.webp", // NOVA IMAGEM AQUI (Transporte Equipa)
     title: "Transporte de maquinários",
     desc: "Realizamos o transporte seguro e eficiente de equipamentos e maquinários agrícolas, assegurando que cheguem ao destino com agilidade e segurança.",
   },
   {
     icon: <Settings size={24} className="text-white" />,
-    image: "/images/imagemeditada.webp",
+    image: "/images/imagemeditada.webp", // Mantido (Peças)
     title: "Transporte de Peças Industriais",
     desc: "Atendemos indústrias com transporte especializado de peças e componentes, garantindo logística confiável e eficiente para o setor industrial.",
   },
   {
     icon: <Wheat size={24} className="text-white" />,
-    image: "/images/colheitaalgodao.webp",
+    image: "/images/colheitaalgodao.webp", // Mantido (Grãos/Algodão)
     title: "Transporte de Grãos",
     desc: "Oferecemos serviços de transporte de grãos com qualidade e agilidade, assegurando que sua produção chegue ao mercado de forma segura e eficiente.",
   },
@@ -30,10 +30,10 @@ const services = [
 export default function Services() {
   return (
     <section id="services" className="bg-[#fafafa] relative pb-20">
-      {/* Top Decoration */}
+      {/* Decoração Superior */}
       <div className="bg-[#ff6600] h-4 w-full rounded-b-[50%] absolute top-0 left-0 z-10"></div>
 
-      {/* Header Block */}
+      {/* Bloco de Cabeçalho */}
       <div className="bg-[#ff6600] text-white py-12 rounded-b-[40px] mb-16 shadow-lg relative overflow-hidden">
         <div className="absolute inset-0 bg-black/10"></div>
         <div className="container mx-auto px-6 text-center relative z-10">
@@ -48,20 +48,20 @@ export default function Services() {
               key={index}
               className="bg-white rounded-xl shadow-xl overflow-hidden hover:-translate-y-2 transition-transform duration-300 flex flex-col relative group"
             >
-              {/* Image Container */}
+              {/* Container da Imagem */}
               <div className="h-48 w-full relative">
                 <img src={item.image || "/placeholder.svg"} alt={item.title} className="w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
               </div>
 
-              {/* Icon - Posicionado Absolutamente para não ser cortado */}
+              {/* Ícone - Posicionado Absolutamente para não ser cortado */}
               <div className="absolute top-48 left-6 -translate-y-1/2 z-20">
                  <div className="bg-[#417641] w-12 h-12 rounded-full flex items-center justify-center shadow-md border-4 border-white">
                     {item.icon}
                  </div>
               </div>
 
-              {/* Content Container */}
+              {/* Conteúdo */}
               <div className="p-6 pt-10 flex-1 flex flex-col">
                 <h3 className="text-lg font-bold mb-3 text-[#417641]">{item.title}</h3>
                 <p className="text-sm text-gray-600 leading-relaxed">{item.desc}</p>
@@ -71,7 +71,7 @@ export default function Services() {
         </div>
       </div>
 
-      {/* Bottom Curve */}
+      {/* Curva Inferior */}
       <div className="absolute bottom-0 w-full overflow-hidden leading-none z-10">
         <svg
           className="relative block w-[calc(100%+1.3px)] h-[60px]"
