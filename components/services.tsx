@@ -2,26 +2,26 @@ import { Sprout, Truck, Settings, Wheat } from "lucide-react"
 
 const services = [
   {
-    icon: <Sprout size={48} className="text-white" />,
-    image: "/images/imagemdrone.webp", // Drone na pulverização
+    icon: <Sprout size={24} className="text-white" />, // Tamanho ajustado para caber perfeito
+    image: "/images/imagemdrone.webp",
     title: "Soluções para o Agronegócio",
     desc: "Oferecemos soluções completas em pulverização e logística agrícola para grandes propriedades rurais, usinas e produtores, garantindo eficiência e alta produtividade no campo.",
   },
   {
-    icon: <Truck size={48} className="text-white" />,
-    image: "/images/colheitacampoaberto.webp", // Reutilizando provisoriamente
+    icon: <Truck size={24} className="text-white" />,
+    image: "/images/colheitacampoaberto.webp",
     title: "Transporte de maquinários",
     desc: "Realizamos o transporte seguro e eficiente de equipamentos e maquinários agrícolas, assegurando que cheguem ao destino com agilidade e segurança.",
   },
   {
-    icon: <Settings size={48} className="text-white" />,
-    image: "/images/imagemeditada.webp", // Reutilizando provisoriamente
+    icon: <Settings size={24} className="text-white" />,
+    image: "/images/imagemeditada.webp",
     title: "Transporte de Peças Industriais",
     desc: "Atendemos indústrias com transporte especializado de peças e componentes, garantindo logística confiável e eficiente para o setor industrial.",
   },
   {
-    icon: <Wheat size={48} className="text-white" />,
-    image: "/images/colheitaalgodao.webp", // Colheita no transporte de grãos
+    icon: <Wheat size={24} className="text-white" />,
+    image: "/images/colheitaalgodao.webp",
     title: "Transporte de Grãos",
     desc: "Oferecemos serviços de transporte de grãos com qualidade e agilidade, assegurando que sua produção chegue ao mercado de forma segura e eficiente.",
   },
@@ -46,18 +46,23 @@ export default function Services() {
           {services.map((item, index) => (
             <div
               key={index}
-              className="bg-white rounded-xl shadow-xl overflow-hidden hover:-translate-y-2 transition-transform duration-300 flex flex-col"
+              className="bg-white rounded-xl shadow-xl overflow-hidden hover:-translate-y-2 transition-transform duration-300 flex flex-col relative group"
             >
-              <div className="h-48 overflow-hidden relative">
+              {/* Image Container */}
+              <div className="h-48 w-full relative">
                 <img src={item.image || "/placeholder.svg"} alt={item.title} className="w-full h-full object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4">
-                  {/* Icon Overlay */}
-                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
               </div>
-              <div className="p-6 flex-1 flex flex-col">
-                <div className="mb-4 bg-[#417641] w-12 h-12 rounded-full flex items-center justify-center shadow-md -mt-10 border-4 border-white">
-                  <div className="scale-50">{item.icon}</div>
-                </div>
+
+              {/* Icon - Posicionado Absolutamente para não ser cortado */}
+              <div className="absolute top-48 left-6 -translate-y-1/2 z-20">
+                 <div className="bg-[#417641] w-12 h-12 rounded-full flex items-center justify-center shadow-md border-4 border-white">
+                    {item.icon}
+                 </div>
+              </div>
+
+              {/* Content Container */}
+              <div className="p-6 pt-10 flex-1 flex flex-col">
                 <h3 className="text-lg font-bold mb-3 text-[#417641]">{item.title}</h3>
                 <p className="text-sm text-gray-600 leading-relaxed">{item.desc}</p>
               </div>
