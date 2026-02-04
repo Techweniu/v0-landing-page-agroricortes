@@ -8,8 +8,9 @@ export default function Footer() {
     <footer className="relative bg-white pt-24 pb-12 overflow-hidden border-t border-gray-100">
       
       {/* ELEMENTOS DE FUNDO (Background) */}
+      
       {/* Caminhão Marca D'água (Esquerda) */}
-      <div className="absolute top-0 left-[-10%] w-[50%] h-full opacity-10 pointer-events-none z-0">
+      <div className="absolute top-0 left-[-10%] w-[50%] h-full opacity-5 pointer-events-none z-0">
          <img 
             src="/images/transporteequipa.webp" 
             alt="Background Truck" 
@@ -18,12 +19,16 @@ export default function Footer() {
          <div className="absolute inset-0 bg-gradient-to-r from-white via-transparent to-white"></div>
       </div>
 
-      {/* Recorte Plantação Milho (Canto Superior Direito) */}
-      <div className="absolute top-0 right-0 w-[30%] h-[200px] pointer-events-none z-0">
+      {/* Recorte Plantação Algodão (Canto Superior Direito) - AJUSTADO */}
+      <div className="absolute top-0 right-0 w-[40%] md:w-[30%] h-[200px] pointer-events-none z-0">
+          {/* Adicionei gradientes para suavizar a transição e não brigar com o texto */}
+          <div className="absolute inset-0 bg-gradient-to-l from-transparent via-white/50 to-white z-10"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent to-white z-10"></div>
+          
           <img 
-            src="/images/colheitaalgodao.webp" // Use a foto do milho aqui se tiver, senão usa essa
+            src="/images/colheitaalgodao.webp" 
             alt="Detail Crop" 
-            className="w-full h-full object-cover rounded-bl-[100px] opacity-80"
+            className="w-full h-full object-cover rounded-bl-[100px] opacity-25" // Opacidade reduzida para 25%
           />
       </div>
 
@@ -31,8 +36,8 @@ export default function Footer() {
       <div className="container mx-auto px-6 relative z-10">
         
         {/* CABEÇALHO CENTRALIZADO */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl uppercase tracking-wider mb-2">
+        <div className="text-center mb-16 relative">
+          <h2 className="text-4xl md:text-5xl uppercase tracking-wider mb-2 drop-shadow-sm bg-white/60 inline-block rounded-lg px-4 backdrop-blur-sm">
             <span className="text-[#ff6600] font-normal">ENTRE EM </span>
             <span className="text-[#005e00] font-bold">CONTATO CONOSCO</span>
           </h2>
@@ -78,8 +83,8 @@ export default function Footer() {
                  <h4 className="font-bold text-gray-800 text-lg uppercase">E-mail</h4>
                </div>
                <div className="pl-14">
-                 <a href="mailto:adm.itumbiara@agroricortes.com.br" className="text-gray-800 font-medium text-lg hover:text-[#ff6600] break-all">
-                   adm.itumbiara@agroricortes.com.br
+                 <a href="mailto:agroricortes@outlook.com" className="text-gray-800 font-medium text-lg hover:text-[#ff6600] break-all">
+                    agroricortes@outlook.com
                  </a>
                </div>
              </div>
@@ -95,7 +100,8 @@ export default function Footer() {
                <div className="pl-14">
                  <p className="text-gray-800 font-medium text-lg leading-relaxed">
                    R. João Manoel de Souza, 819<br />
-                   Centro, Itumbiara - GO
+                   Apt 204 Sala A - Centro<br />
+                   Itumbiara - GO, 75503-162
                  </p>
                </div>
              </div>
