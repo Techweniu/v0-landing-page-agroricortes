@@ -1,5 +1,5 @@
 import React from 'react';
-import { Instagram, Facebook, Phone, Mail, MapPin } from 'lucide-react';
+import { Instagram, Phone, Mail, MapPin } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
@@ -18,11 +18,13 @@ const Footer: React.FC = () => {
                Soluções agrícolas completas. Da pulverização ao transporte, conectando o campo ao futuro com eficiência e tecnologia.
              </p>
              <div className="flex gap-4">
-               <a href="https://instagram.com" target="_blank" rel="noreferrer" className="bg-gray-100 text-[#417641] hover:bg-[#ff6600] hover:text-white p-3 rounded-full transition-all shadow-sm">
+               <a 
+                 href="https://www.instagram.com/agroricortes/" 
+                 target="_blank" 
+                 rel="noreferrer" 
+                 className="bg-gray-100 text-[#417641] hover:bg-[#ff6600] hover:text-white p-3 rounded-full transition-all shadow-sm"
+               >
                   <Instagram size={20} />
-               </a>
-               <a href="https://facebook.com" target="_blank" rel="noreferrer" className="bg-gray-100 text-[#417641] hover:bg-[#ff6600] hover:text-white p-3 rounded-full transition-all shadow-sm">
-                  <Facebook size={20} />
                </a>
              </div>
           </div>
