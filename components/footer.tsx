@@ -1,91 +1,120 @@
+"use client";
+
 import React from 'react';
-import { Instagram, Phone, Mail, MapPin } from 'lucide-react';
+import { Phone, Mail, MapPin } from 'lucide-react';
 
-const Footer: React.FC = () => {
+export default function Footer() {
   return (
-    <footer className="bg-white text-gray-800 pt-16 pb-8 border-t border-gray-100">
-      <div className="container mx-auto px-6 max-w-6xl">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+    <footer className="relative bg-white pt-24 pb-12 overflow-hidden border-t border-gray-100">
+      
+      {/* ELEMENTOS DE FUNDO (Background) */}
+      
+      {/* Caminhão Marca D'água (Esquerda) */}
+      <div className="absolute top-0 left-[-10%] w-[50%] h-full opacity-5 pointer-events-none z-0">
+         <img 
+            src="/images/transporteequipa.webp" 
+            alt="Background Truck" 
+            className="w-full h-full object-cover object-left grayscale"
+         />
+         <div className="absolute inset-0 bg-gradient-to-r from-white via-transparent to-white"></div>
+      </div>
+
+      {/* Recorte Plantação Algodão (Canto Superior Direito) - AJUSTADO */}
+      <div className="absolute top-0 right-0 w-[40%] md:w-[30%] h-[200px] pointer-events-none z-0">
+          {/* Adicionei gradientes para suavizar a transição e não brigar com o texto */}
+          <div className="absolute inset-0 bg-gradient-to-l from-transparent via-white/50 to-white z-10"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent to-white z-10"></div>
           
-          {/* Coluna 1: Logo e Descrição */}
-          <div className="space-y-6">
-             <img 
-               src="/images/logo.webp" 
-               alt="AgroRicôrtes Logo" 
-               className="h-16 w-auto object-contain mb-4" 
-             />
-             <p className="text-gray-600 text-sm leading-relaxed">
-               Soluções agrícolas completas. Da pulverização ao transporte, conectando o campo ao futuro com eficiência e tecnologia.
-             </p>
-             <div className="flex gap-4">
-               <a 
-                 href="https://www.instagram.com/agroricortes/" 
-                 target="_blank" 
-                 rel="noreferrer" 
-                 className="bg-gray-100 text-[#417641] hover:bg-[#ff6600] hover:text-white p-3 rounded-full transition-all shadow-sm"
-               >
-                  <Instagram size={20} />
-               </a>
+          <img 
+            src="/images/colheitaalgodao.webp" 
+            alt="Detail Crop" 
+            className="w-full h-full object-cover rounded-bl-[100px] opacity-25" // Opacidade reduzida para 25%
+          />
+      </div>
+
+
+      <div className="container mx-auto px-6 relative z-10">
+        
+        {/* CABEÇALHO CENTRALIZADO */}
+        <div className="text-center mb-16 relative">
+          <h2 className="text-4xl md:text-5xl uppercase tracking-wider mb-2 drop-shadow-sm bg-white/60 inline-block rounded-lg px-4 backdrop-blur-sm">
+            <span className="text-[#ff6600] font-normal">ENTRE EM </span>
+            <span className="text-[#005e00] font-bold">CONTATO CONOSCO</span>
+          </h2>
+          {/* Tracinhos decorativos */}
+          <div className="flex justify-center gap-2 mt-2">
+            <div className="w-8 h-1 bg-[#005e00]"></div>
+            <div className="w-8 h-1 bg-[#ff6600]"></div>
+          </div>
+        </div>
+
+        {/* SEÇÃO INFORMAÇÕES */}
+        <div className="mb-12">
+           <div className="flex items-center gap-4 mb-8">
+              <span className="text-[#ff6600] text-xl font-bold uppercase whitespace-nowrap">Informações</span>
+              <div className="w-full h-[1px] bg-gray-400"></div>
+           </div>
+
+           {/* Grid de Contatos (3 Colunas) */}
+           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+             
+             {/* Coluna 1: Contato (Telefone) */}
+             <div className="flex flex-col items-start gap-4">
+               <div className="flex items-center gap-3">
+                 <div className="w-10 h-10 bg-[#005e00] rounded-md flex items-center justify-center text-[#ff6600]">
+                   <Phone size={24} fill="currentColor" />
+                 </div>
+                 <h4 className="font-bold text-gray-800 text-lg uppercase">Contato</h4>
+               </div>
+               <div className="pl-14 space-y-2">
+                 <p className="text-gray-800 font-medium text-lg">(64) 9 9331-1111</p>
+                 <span className="inline-block bg-gray-200 text-gray-700 px-2 py-1 rounded text-lg font-medium">
+                   (64) 99236-3033
+                 </span>
+               </div>
              </div>
-          </div>
 
-          {/* Coluna 2: Links Rápidos */}
-          <div>
-            <h3 className="text-xl font-bold mb-6 text-[#ff6600]">Navegação</h3>
-            <ul className="space-y-3 text-gray-600">
-              <li><a href="#home" className="hover:text-[#417641] transition-colors font-medium">Início</a></li>
-              <li><a href="#whoweare" className="hover:text-[#417641] transition-colors font-medium">Quem Somos</a></li>
-              <li><a href="#services" className="hover:text-[#417641] transition-colors font-medium">Serviços</a></li>
-              <li><a href="#workwithus" className="hover:text-[#417641] transition-colors font-medium">Trabalhe Conosco</a></li>
-            </ul>
-          </div>
-
-          {/* Coluna 3: Contato */}
-          <div>
-            <h3 className="text-xl font-bold mb-6 text-[#ff6600]">Contato</h3>
-            <ul className="space-y-4 text-gray-600">
-               {/* Endereço */}
-               <li className="flex items-start gap-3 group">
-                  <div className="bg-[#417641]/10 p-2 rounded-lg group-hover:bg-[#ff6600]/10 transition-colors">
-                     <MapPin className="text-[#417641] group-hover:text-[#ff6600] transition-colors" size={20} />
-                  </div>
-                  <span className="text-sm">
-                    Rua João Manoel de Souza, 819<br />
-                    Apt 204 Sala A - Centro<br />
-                    Itumbiara - GO, 75503-162
-                  </span>
-               </li>
-               
-               {/* Telefone / WhatsApp */}
-               <li className="flex items-center gap-3 group">
-                  <div className="bg-[#417641]/10 p-2 rounded-lg group-hover:bg-[#ff6600]/10 transition-colors">
-                     <Phone className="text-[#417641] group-hover:text-[#ff6600] transition-colors" size={20} />
-                  </div>
-                  <a href="https://wa.me/556493311111" target="_blank" rel="noreferrer" className="hover:text-[#417641] transition-colors font-bold">
-                    (64) 9331-1111
-                  </a>
-               </li>
-               
-               {/* E-mail */}
-               <li className="flex items-center gap-3 group">
-                   <div className="bg-[#417641]/10 p-2 rounded-lg group-hover:bg-[#ff6600]/10 transition-colors">
-                     <Mail className="text-[#417641] group-hover:text-[#ff6600] transition-colors" size={20} />
-                  </div>
-                  <a href="mailto:agroricortes@outlook.com" className="hover:text-[#417641] transition-colors">
+             {/* Coluna 2: E-mail */}
+             <div className="flex flex-col items-start gap-4">
+               <div className="flex items-center gap-3">
+                 <div className="w-10 h-10 bg-[#005e00] rounded-md flex items-center justify-center text-[#ff6600]">
+                   <Mail size={24} fill="currentColor" />
+                 </div>
+                 <h4 className="font-bold text-gray-800 text-lg uppercase">E-mail</h4>
+               </div>
+               <div className="pl-14">
+                 <a href="mailto:agroricortes@outlook.com" className="text-gray-800 font-medium text-lg hover:text-[#ff6600] break-all">
                     agroricortes@outlook.com
-                  </a>
-               </li>
-            </ul>
-          </div>
+                 </a>
+               </div>
+             </div>
+
+             {/* Coluna 3: Endereço */}
+             <div className="flex flex-col items-start gap-4">
+               <div className="flex items-center gap-3">
+                 <div className="w-10 h-10 bg-[#005e00] rounded-md flex items-center justify-center text-[#ff6600]">
+                   <MapPin size={24} fill="currentColor" />
+                 </div>
+                 <h4 className="font-bold text-gray-800 text-lg uppercase">Endereço</h4>
+               </div>
+               <div className="pl-14">
+                 <p className="text-gray-800 font-medium text-lg leading-relaxed">
+                   R. João Manoel de Souza, 819<br />
+                   Apt 204 Sala A - Centro<br />
+                   Itumbiara - GO, 75503-162
+                 </p>
+               </div>
+             </div>
+
+           </div>
         </div>
 
-        {/* Linha Divisória e Copyright */}
-        <div className="border-t border-gray-100 pt-8 text-center text-gray-400 text-sm">
-          <p>&copy; {new Date().getFullYear()} AgroRicôrtes. Todos os direitos reservados.</p>
+        {/* Copyright simples */}
+        <div className="text-center pt-8 border-t border-gray-100 mt-8">
+           <p className="text-gray-400 text-sm">© {new Date().getFullYear()} AgroRicôrtes. Todos os direitos reservados.</p>
         </div>
+
       </div>
     </footer>
   );
-};
-
-export default Footer;
+}

@@ -1,93 +1,98 @@
-import { Sprout, Truck, Settings, Wheat } from "lucide-react"
-import ScrollReveal from "./scroll-reveal"; // <--- Importamos o efeito
+"use client";
+
+import React from 'react';
 
 const services = [
   {
-    icon: <Sprout size={24} className="text-white" />,
-    image: "/images/imagemdrone.webp",
-    title: "Soluções para o Agronegócio",
-    desc: "Oferecemos soluções completas em pulverização e logística agrícola para grandes propriedades rurais, usinas e produtores, garantindo eficiência e alta produtividade no campo.",
+    id: 1,
+    title: "Transporte de Maquinários Agrícolas",
+    description: "Transporte especializado de tratores e colheitadeiras, com foco total na segurança da carga e no cumprimento rigoroso dos prazos.",
+    image: "/images/imagemeditada.webp", // Trocado (estava no item 2)
   },
   {
-    icon: <Truck size={24} className="text-white" />,
-    image: "/images/colheitacampoaberto.webp",
-    title: "Transporte de maquinários",
-    desc: "Realizamos o transporte seguro e eficiente de equipamentos e maquinários agrícolas, assegurando que cheguem ao destino com agilidade e segurança.",
-  },
-  {
-    icon: <Settings size={24} className="text-white" />,
-    image: "/images/transporteequipa.webp",
+    id: 2,
     title: "Transporte de Peças Industriais",
-    desc: "Atendemos indústrias com transporte especializado de peças e componentes, garantindo logística confiável e eficiente para o setor industrial.",
+    description: "Logística eficiente para indústrias, garantindo a integridade e precisão na entrega de grandes peças e componentes.",
+    image: "/images/transporteequipa.webp", // Trocado (estava no item 1)
   },
   {
-    icon: <Wheat size={24} className="text-white" />,
-    image: "/images/colheitaalgodao.webp",
+    id: 3,
     title: "Transporte de Grãos",
-    desc: "Oferecemos serviços de transporte de grãos com qualidade e agilidade, assegurando que sua produção chegue ao mercado de forma segura e eficiente.",
+    description: "Frota preparada para o transporte de soja, milho e trigo, com processos otimizados para evitar perdas e garantir qualidade.",
+    image: "/images/transportegraos.webp", 
   },
-]
+  {
+    id: 4,
+    title: "Pulverização Agrícola",
+    description: "Otimização da cadeia produtiva visando maior produtividade e redução de custos operacionais na sua lavoura.",
+    image: "/images/pulverizacao.webp", 
+  },
+];
 
 export default function Services() {
   return (
-    <section id="services" className="bg-[#fafafa] relative pb-20">
-      {/* Top Decoration */}
-      <div className="bg-[#ff6600] h-4 w-full rounded-b-[50%] absolute top-0 left-0 z-10"></div>
-
-      {/* Header Block com Animação vindo de cima */}
-      <ScrollReveal direction="down">
-        <div className="bg-[#ff6600] text-white py-12 rounded-b-[40px] mb-16 shadow-lg relative overflow-hidden">
-            <div className="absolute inset-0 bg-black/10"></div>
-            <div className="container mx-auto px-6 text-center relative z-10">
-            <h2 className="text-3xl md:text-4xl font-black uppercase tracking-wider">Atendemos</h2>
-            </div>
+    <section id="services" className="py-20 bg-white">
+      <div className="container mx-auto px-6 max-w-5xl">
+        
+        {/* Cabeçalho */}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl uppercase tracking-wide">
+            <span className="text-[#ff6600] font-normal">NOSSOS </span>
+            <span className="text-[#005e00] font-bold">SERVIÇOS</span>
+          </h2>
         </div>
-      </ScrollReveal>
 
-      <div className="container mx-auto px-6 max-w-7xl">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {services.map((item, index) => (
-            // AQUI A MÁGICA: delay aumenta conforme o index (0ms, 150ms, 300ms...)
-            <ScrollReveal key={index} delay={index * 150} direction="up" className="h-full">
-                <div
-                className="bg-white rounded-xl shadow-xl overflow-hidden hover:-translate-y-2 transition-transform duration-300 flex flex-col relative group h-full"
-                >
-                {/* Image Container */}
-                <div className="h-48 w-full relative">
-                    <img src={item.image || "/placeholder.svg"} alt={item.title} className="w-full h-full object-cover" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+        {/* Lista Vertical */}
+        <div className="flex flex-col gap-10">
+          {services.map((item) => {
+            // Lógica ajustada: O zoom acompanha a imagem 'imagemeditada' (que agora está no ID 1)
+            // Se você preferir que o zoom fique na categoria 'Peças' (ID 2), basta mudar para item.id === 2
+            const isSpecialItem = item.id === 1; 
+            
+            const imageClasses = `w-full h-full object-cover transition-transform duration-500 ${
+              isSpecialItem 
+                ? "scale-125 hover:scale-150" // Zoom mantido para esta imagem específica
+                : "hover:scale-110"
+            }`;
+
+            return (
+              <div key={item.id} className="flex flex-col md:flex-row items-center">
+                
+                {/* Imagem (Esquerda) - Borda grossa verde */}
+                <div className="w-full md:w-1/3 z-10">
+                  <div className="aspect-square rounded-3xl border-[6px] border-[#005e00] overflow-hidden shadow-lg bg-white">
+                     <img 
+                       src={item.image} 
+                       alt={item.title} 
+                       className={imageClasses}
+                     />
+                  </div>
                 </div>
 
-                {/* Icon */}
-                <div className="absolute top-48 left-6 -translate-y-1/2 z-20">
-                    <div className="bg-[#417641] w-12 h-12 rounded-full flex items-center justify-center shadow-md border-4 border-white">
-                        {item.icon}
+                {/* Texto (Direita) - Conectado */}
+                <div className="w-full md:w-2/3 md:-ml-10 mt-[-20px] md:mt-0 z-0">
+                  <div className="h-full border border-gray-300 rounded-r-xl rounded-l-xl md:rounded-l-none bg-white p-6 md:pl-16 md:pr-8 py-8 shadow-sm hover:shadow-md transition-shadow">
+                    <div className="flex h-full items-center">
+                      {/* Linha Vertical Laranja */}
+                      <div className="w-1 md:w-1.5 h-16 bg-[#ff6600] rounded-full mr-6 flex-shrink-0"></div>
+                      
+                      <div>
+                        <h3 className="text-xl md:text-2xl font-bold text-[#005e00] mb-2 leading-tight">
+                          {item.title}
+                        </h3>
+                        <p className="text-gray-600 text-sm md:text-base leading-relaxed">
+                          {item.description}
+                        </p>
+                      </div>
                     </div>
+                  </div>
                 </div>
 
-                {/* Content */}
-                <div className="p-6 pt-10 flex-1 flex flex-col">
-                    <h3 className="text-lg font-bold mb-3 text-[#417641]">{item.title}</h3>
-                    <p className="text-sm text-gray-600 leading-relaxed">{item.desc}</p>
-                </div>
-                </div>
-            </ScrollReveal>
-          ))}
+              </div>
+            );
+          })}
         </div>
-      </div>
-
-      {/* Bottom Curve */}
-      <div className="absolute bottom-0 w-full overflow-hidden leading-none z-10">
-        <svg
-          className="relative block w-[calc(100%+1.3px)] h-[60px]"
-          data-name="Layer 1"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 1200 120"
-          preserveAspectRatio="none"
-        >
-          <path d="M1200 120L0 16.48V0h1200v120z" className="fill-[#e5e5e5]"></path>
-        </svg>
       </div>
     </section>
-  )
+  );
 }
