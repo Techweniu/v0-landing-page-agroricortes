@@ -1,51 +1,70 @@
-import { Phone } from "lucide-react";
+import React from 'react';
+import { Instagram, Facebook, Phone, Mail, MapPin } from 'lucide-react';
 
-export default function Footer() {
+const Footer: React.FC = () => {
   return (
-    <footer className="bg-white border-t border-gray-200 py-12">
+    <footer className="bg-[#1a1a1a] text-white pt-16 pb-8">
       <div className="container mx-auto px-6 max-w-6xl">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-8">
-          <div className="flex items-center gap-4">
-            <img
-              src="https://picsum.photos/150/50?random=10"
-              alt="AgroRicôrtes Logo"
-              className="h-12 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all"
-            />
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+          
+          {/* Coluna 1: Logo e Descrição */}
+          <div className="space-y-6">
+             <img 
+               src="/images/logo.webp" 
+               alt="AgroRicôrtes Logo" 
+               className="h-16 w-auto object-contain mb-4" 
+             />
+             <p className="text-gray-400 text-sm leading-relaxed">
+               Soluções agrícolas completas. Da pulverização ao transporte, conectando o campo ao futuro com eficiência e tecnologia.
+             </p>
+             <div className="flex gap-4">
+               <a href="#" className="bg-[#417641] hover:bg-[#ff6600] p-2 rounded-full transition-colors">
+                  <Instagram size={20} />
+               </a>
+               <a href="#" className="bg-[#417641] hover:bg-[#ff6600] p-2 rounded-full transition-colors">
+                  <Facebook size={20} />
+               </a>
+             </div>
           </div>
 
-          <div className="text-center md:text-right text-gray-500 text-sm">
-            <p>
-              &copy; {new Date().getFullYear()} AgroRicôrtes – Todos os direitos
-              reservados.
-            </p>
-            <div className="flex gap-4 justify-center md:justify-end mt-2">
-              <a href="#" className="hover:text-[#417641] transition-colors">
-                Termos de Uso
-              </a>
-              <span>|</span>
-              <a href="#" className="hover:text-[#417641] transition-colors">
-                Políticas de Privacidade
-              </a>
-              <span>|</span>
-              <a href="#" className="hover:text-[#417641] transition-colors">
-                Políticas de Cookies
-              </a>
-            </div>
-          </div>
-
+          {/* Coluna 2: Links Rápidos */}
           <div>
-            <a
-              href="https://wa.me/556499331111"
-              target="_blank"
-              rel="noreferrer"
-              className="bg-[#005e00] hover:bg-[#004d00] text-white px-6 py-2 rounded-full font-bold flex items-center gap-2 transition-colors"
-            >
-              <Phone size={20} />
-              WhatsApp
-            </a>
+            <h3 className="text-xl font-bold mb-6 text-[#ff6600]">Navegação</h3>
+            <ul className="space-y-3 text-gray-300">
+              <li><a href="#home" className="hover:text-[#ff6600] transition-colors">Início</a></li>
+              <li><a href="#whoweare" className="hover:text-[#ff6600] transition-colors">Quem Somos</a></li>
+              <li><a href="#services" className="hover:text-[#ff6600] transition-colors">Serviços</a></li>
+              <li><a href="#workwithus" className="hover:text-[#ff6600] transition-colors">Trabalhe Conosco</a></li>
+            </ul>
           </div>
+
+          {/* Coluna 3: Contato */}
+          <div>
+            <h3 className="text-xl font-bold mb-6 text-[#ff6600]">Contato</h3>
+            <ul className="space-y-4 text-gray-300">
+               <li className="flex items-start gap-3">
+                  <MapPin className="text-[#417641] flex-shrink-0 mt-1" size={20} />
+                  <span>Av. Exemplo, 123 - Centro<br />Sua Cidade - SP</span>
+               </li>
+               <li className="flex items-center gap-3">
+                  <Phone className="text-[#417641] flex-shrink-0" size={20} />
+                  <span>(00) 00000-0000</span>
+               </li>
+               <li className="flex items-center gap-3">
+                  <Mail className="text-[#417641] flex-shrink-0" size={20} />
+                  <span>contato@agroricortes.com.br</span>
+               </li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Linha Divisória e Copyright */}
+        <div className="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
+          <p>&copy; {new Date().getFullYear()} AgroRicôrtes. Todos os direitos reservados.</p>
         </div>
       </div>
     </footer>
   );
-}
+};
+
+export default Footer;

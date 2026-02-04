@@ -17,9 +17,7 @@ const Hero: React.FC = () => {
       
       {/* --- BACKGROUND VIDEO --- */}
       <div className="absolute inset-0 z-0">
-         {/* Camada escura para melhorar leitura do texto (Ajuste a opacidade no bg-black/XX) */}
          <div className="absolute inset-0 bg-black/40 z-10"></div>
-         
          <video
             autoPlay
             loop
@@ -34,8 +32,14 @@ const Hero: React.FC = () => {
 
       {/* Navigation */}
       <nav className="relative z-50 flex justify-between items-center p-6 max-w-6xl mx-auto">
-        <div className="text-2xl font-bold font-roboto tracking-tighter">
-           <span className="bg-white text-[#417641] px-2 py-1 rounded">Agro</span>Ricôrtes
+        
+        {/* LOGO AQUI - Substituindo o texto pela imagem */}
+        <div className="flex-shrink-0">
+          <img 
+            src="/images/logo.webp" 
+            alt="AgroRicôrtes Logo" 
+            className="h-12 w-auto object-contain" 
+          />
         </div>
         
         {/* Desktop Nav */}
@@ -108,7 +112,6 @@ const Hero: React.FC = () => {
                     className="w-full h-full object-cover opacity-90"
                 />
               </div>
-              {/* Floating Icons */}
               <div className="absolute -top-4 -right-4 bg-[#ff6600] p-3 rounded-full shadow-lg">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
