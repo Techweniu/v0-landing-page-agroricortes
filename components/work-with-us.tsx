@@ -5,7 +5,7 @@ import { Upload, Check, Loader2 } from 'lucide-react';
 
 // --- CONFIGURAÇÃO ---
 // SUBSTITUA PELA URL QUE VOCÊ COPIOU DO GOOGLE APPS SCRIPT
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxZXYlW5UNevocuxfGy4J_q4jvkrEoqnupDXPkeqHR5xd8KhtenMP9NwJT80HEWVkZr/exec";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwYm8_umFDPZ0AjbTOhryfJgqVd-WhE-_kPFG92OjFDkwwhwVACCtk6Ox6BCB2gGbLR/exec";
 
 const WorkWithUs: React.FC = () => {
   const [loading, setLoading] = useState(false);
@@ -17,11 +17,13 @@ const WorkWithUs: React.FC = () => {
     firstName: '',
     lastName: '',
     email: '',
-    phone: ''
+    phone: '',
+    about: '' // Novo estado para o campo "Sobre"
   });
   const [file, setFile] = useState<File | null>(null);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  // Atualizado para aceitar HTMLTextAreaElement também
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
@@ -84,7 +86,8 @@ const WorkWithUs: React.FC = () => {
       });
 
       setSuccess(true);
-      setFormData({ firstName: '', lastName: '', email: '', phone: '' });
+      // Limpa o formulário, incluindo o novo campo 'about'
+      setFormData({ firstName: '', lastName: '', email: '', phone: '', about: '' });
       setFile(null);
       setFileName(null);
 
@@ -104,7 +107,7 @@ const WorkWithUs: React.FC = () => {
                 <div className="bg-green-100 p-4 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
                     <Check className="w-10 h-10 text-[#005e00]" />
                 </div>
-                <h3 className="text-2xl font-bold text-[#005e00] mb-4">Candidatura Enviada!</h3>
+                <h3 className="text-2xl font-bold text-[#005e00] mb-4">Enviado com sucesso</h3>
                 <p className="text-gray-600 mb-8">Recebemos seus dados e seu currículo com sucesso. Boa sorte!</p>
                 <button 
                     onClick={() => setSuccess(false)}
@@ -184,6 +187,19 @@ const WorkWithUs: React.FC = () => {
                          className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#ff6600] focus:ring-2 focus:ring-[#ff6600]/20 outline-none transition-all bg-gray-50" 
                        />
                     </div>
+                </div>
+
+                {/* NOVO CAMPO: Sobre você */}
+                <div>
+                   <label className="block text-sm font-bold text-gray-700 mb-2">Fale um pouco sobre você</label>
+                   <textarea 
+                     name="about"
+                     value={formData.about}
+                     onChange={handleInputChange}
+                     rows={4}
+                     placeholder="Conte-nos brevemente suas experiências, objetivos e por que gostaria de trabalhar conosco..."
+                     className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#ff6600] focus:ring-2 focus:ring-[#ff6600]/20 outline-none transition-all resize-none bg-gray-50" 
+                   ></textarea>
                 </div>
 
                 {/* Upload de Arquivo */}

@@ -82,26 +82,34 @@ export default function Footer() {
                  <h4 className="font-bold text-gray-800 text-lg uppercase">E-mail</h4>
                </div>
                <div className="pl-14">
-                 <a href="mailto:agroricortes@outlook.com" className="text-gray-800 font-medium text-lg hover:text-[#ff6600] break-all">
-                    agroricortes@outlook.com
+                 <a href="mailto:adm.itumbiara@agroricortes.com.br" className="text-gray-800 font-medium text-lg hover:text-[#ff6600] break-all">
+                    adm.itumbiara@agroricortes.com.br
                  </a>
                </div>
              </div>
 
-             {/* Coluna 3: Endereço */}
-             <div className="flex flex-col items-start gap-4">
+             {/* Coluna 3: Localização (Com Mapa Embed) */}
+             <div className="flex flex-col items-start gap-4 w-full">
                <div className="flex items-center gap-3">
                  <div className="w-10 h-10 bg-[#005e00] rounded-md flex items-center justify-center text-[#ff6600]">
                    <MapPin size={24} fill="currentColor" />
                  </div>
-                 <h4 className="font-bold text-gray-800 text-lg uppercase">Endereço</h4>
+                 <h4 className="font-bold text-gray-800 text-lg uppercase">Localização</h4>
                </div>
-               <div className="pl-14">
-                 <p className="text-gray-800 font-medium text-lg leading-relaxed">
-                   R. João Manoel de Souza, 819<br />
-                   Apt 204 Sala A - Centro<br />
-                   Itumbiara - GO, 75503-162
-                 </p>
+               
+               {/* Embed do Google Maps */}
+               <div className="w-full h-48 rounded-lg overflow-hidden shadow-md mt-2 border border-gray-200">
+                  <iframe 
+                    width="100%" 
+                    height="100%" 
+                    frameBorder="0" 
+                    scrolling="no" 
+                    marginHeight={0} 
+                    marginWidth={0} 
+                    src="https://maps.google.com/maps?q=R.+Jo%C3%A3o+Manoel+de+Souza,+819+-+Centro,+Itumbiara+-+GO&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                    title="Mapa de Localização AgroRicôrtes"
+                    className="w-full h-full"
+                  ></iframe>
                </div>
              </div>
 

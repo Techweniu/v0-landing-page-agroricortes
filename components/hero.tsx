@@ -3,21 +3,38 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ArrowRight } from 'lucide-react';
 
+// LISTA DE VÍDEOS (Ordem alterada: Novo vídeo primeiro)
+const VIDEO_SOURCES = [
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/pranchaindustrial-lNaAYyQJDVe7HgZZksUG6NF1UMYz8W.mp4", // <--- Este agora é o primeiro
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/background-agro-sbNU9GjYxbiuHgUxhJZcMeXXWlZOQQ.mp4"
+];
+
 const Hero: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  
+  // O índice inicial é 0, então ele vai começar pelo primeiro da lista acima
+  const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
 
-  // Efeito para detectar rolagem (opcional, mas bom para refinar a sombra)
+  // Efeito para detectar rolagem
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Efeito para alternar os vídeos automaticamente (Transição)
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentVideoIndex((prevIndex) => (prevIndex + 1) % VIDEO_SOURCES.length);
+    }, 8000); // Troca a cada 8 segundos
+
+    return () => clearInterval(interval);
+  }, []);
+
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-      // Ajuste do offset por causa do menu fixo (aprox 80px)
       const y = element.getBoundingClientRect().top + window.pageYOffset - 100;
       window.scrollTo({ top: y, behavior: 'smooth' });
     }
@@ -27,24 +44,27 @@ const Hero: React.FC = () => {
   return (
     <div id="home" className="relative bg-[#417641] min-h-screen text-white overflow-hidden">
       
-      {/* --- BACKGROUND VIDEO --- */}
-      <div className="absolute inset-0 z-0">
+      {/* --- BACKGROUND VIDEOS COM TRANSIÇÃO --- */}
+      <div className="absolute inset-0 z-0 bg-black">
          <div className="absolute inset-0 bg-black/40 z-10"></div>
-         <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="w-full h-full object-cover"
-         >
-            <source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/background-agro-sbNU9GjYxbiuHgUxhJZcMeXXWlZOQQ.mp4" type="video/mp4" />
-            Seu navegador não suporta vídeos HTML5.
-         </video>
+         
+         {VIDEO_SOURCES.map((src, index) => (
+           <video
+              key={src}
+              autoPlay
+              loop
+              muted
+              playsInline
+              className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${
+                index === currentVideoIndex ? 'opacity-100' : 'opacity-0'
+              }`}
+           >
+              <source src={src} type="video/mp4" />
+           </video>
+         ))}
       </div>
 
-      {/* --- NAVIGATION (FIXED / FROZEN PANEL) --- 
-         Mudanças: bg-white, fixed, shadow, cores de texto escuras
-      */}
+      {/* --- NAVIGATION (FIXED / FROZEN PANEL) --- */}
       <nav 
         className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
           scrolled ? 'py-2 shadow-md' : 'py-4'
@@ -61,7 +81,7 @@ const Hero: React.FC = () => {
             />
           </div>
           
-          {/* Desktop Nav - Texto Escuro agora */}
+          {/* Desktop Nav */}
           <div className="hidden md:flex space-x-8 items-center font-bold text-sm text-gray-700">
             <button onClick={() => scrollToSection('whoweare')} className="hover:text-[#ff6600] transition-colors">Quem somos</button>
             <button onClick={() => scrollToSection('services')} className="hover:text-[#ff6600] transition-colors">Serviços</button>
@@ -76,7 +96,7 @@ const Hero: React.FC = () => {
             </button>
           </div>
 
-          {/* Mobile Menu Button - Escuro */}
+          {/* Mobile Menu Button */}
           <div className="md:hidden">
             <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-gray-800 p-2">
               {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
@@ -84,7 +104,7 @@ const Hero: React.FC = () => {
           </div>
         </div>
 
-        {/* Mobile Nav Menu - Branco */}
+        {/* Mobile Nav Menu */}
         {isMenuOpen && (
           <div className="absolute top-full left-0 w-full bg-white z-50 p-6 flex flex-col space-y-4 shadow-xl border-t border-gray-100 text-gray-800">
              <button onClick={() => scrollToSection('whoweare')} className="text-left font-bold hover:text-[#ff6600] py-2 border-b border-gray-100">Quem somos</button>
@@ -97,7 +117,7 @@ const Hero: React.FC = () => {
         )}
       </nav>
 
-      {/* Content - Adicionado padding-top extra para compensar o menu fixo */}
+      {/* Content */}
       <div className="relative z-10 container max-w-6xl mx-auto px-6 pt-32 pb-24 md:pt-48 flex flex-col md:flex-row items-center">
         <div className="md:w-1/2 mb-12 md:mb-0 text-center md:text-left">
           <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6 drop-shadow-md">

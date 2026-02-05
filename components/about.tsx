@@ -15,7 +15,7 @@ export default function About() {
                 SOBRE NÓS
               </span>
               <h2 className="text-4xl md:text-5xl font-bold text-[#005e00] mb-6">
-                Por que o nome <br /> AgroRicôrtes?
+                Por que o nome <br /> Ricôrtes?
               </h2>
               <p className="text-gray-600 text-lg leading-relaxed mb-6">
                 Nosso nome é uma homenagem às famílias Ribeiro e Côrtes, que se
