@@ -7,19 +7,19 @@ const services = [
     id: 1,
     title: "Transporte de Maquinários Agrícolas",
     description: "Transporte especializado de tratores e colheitadeiras, com foco total na segurança da carga e no cumprimento rigoroso dos prazos.",
-    image: "/images/imagemeditada.webp", // Trocado (estava no item 2)
+    image: "/images/maquinariosagricolas.webp", // Alterado para a nova imagem
   },
   {
     id: 2,
     title: "Transporte de Peças Industriais",
     description: "Logística eficiente para indústrias, garantindo a integridade e precisão na entrega de grandes peças e componentes.",
-    image: "/images/transporteequipa.webp", // Trocado (estava no item 1)
+    image: "/images/transporteequipa.webp", 
   },
   {
     id: 3,
     title: "Transporte de Grãos",
     description: "Frota preparada para o transporte de soja, milho e trigo, com processos otimizados para evitar perdas e garantir qualidade.",
-    image: "/images/transportegraos.webp", 
+    image: "/images/transportedegraos.webp", // Alterado para a nova imagem
   },
   {
     id: 4,
@@ -45,8 +45,7 @@ export default function Services() {
         {/* Lista Vertical */}
         <div className="flex flex-col gap-10">
           {services.map((item) => {
-            // Lógica ajustada: O zoom acompanha a imagem 'imagemeditada' (que agora está no ID 1)
-            // Se você preferir que o zoom fique na categoria 'Peças' (ID 2), basta mudar para item.id === 2
+            // Lógica ajustada: O zoom acompanha a imagem do item 1
             const isSpecialItem = item.id === 1; 
             
             const imageClasses = `w-full h-full object-cover transition-transform duration-500 ${
