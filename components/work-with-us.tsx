@@ -5,7 +5,7 @@ import { Upload, Check, Loader2 } from 'lucide-react';
 
 // --- CONFIGURAÇÃO ---
 // SUBSTITUA PELA URL QUE VOCÊ COPIOU DO GOOGLE APPS SCRIPT
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxZXYlW5UNevocuxfGy4J_q4jvkrEoqnupDXPkeqHR5xd8KhtenMP9NwJT80HEWVkZr/exec";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwYm8_umFDPZ0AjbTOhryfJgqVd-WhE-_kPFG92OjFDkwwhwVACCtk6Ox6BCB2gGbLR/exec";
 
 const WorkWithUs: React.FC = () => {
   const [loading, setLoading] = useState(false);
