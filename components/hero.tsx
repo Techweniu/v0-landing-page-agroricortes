@@ -3,17 +3,17 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ArrowRight } from 'lucide-react';
 
-// Lista de vídeos para o background
+// LISTA DE VÍDEOS (Ordem alterada: Novo vídeo primeiro)
 const VIDEO_SOURCES = [
-  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/background-agro-sbNU9GjYxbiuHgUxhJZcMeXXWlZOQQ.mp4",
-  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/pranchaindustrial-lNaAYyQJDVe7HgZZksUG6NF1UMYz8W.mp4" // O novo vídeo local
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/pranchaindustrial-lNaAYyQJDVe7HgZZksUG6NF1UMYz8W.mp4", // <--- Este agora é o primeiro
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/background-agro-sbNU9GjYxbiuHgUxhJZcMeXXWlZOQQ.mp4"
 ];
 
 const Hero: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   
-  // Estado para controlar qual vídeo está visível (índice 0 ou 1)
+  // O índice inicial é 0, então ele vai começar pelo primeiro da lista acima
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
 
   // Efeito para detectar rolagem
