@@ -16,7 +16,7 @@ export default function Differentials() {
                 <h2 className="text-3xl md:text-4xl uppercase leading-none">
                   <span className="text-[#ff6600] font-normal block">POR QUE</span>
                   <span className="text-[#005e00] font-bold block">ESCOLHER</span>
-                  <span className="text-[#005e00] font-bold block text-2xl md:text-3xl mt-1">A AGRORICÔRTES?</span>
+                  <span className="text-[#005e00] font-bold block text-2xl md:text-3xl mt-1">A RICÔRTES?</span>
                 </h2>
              </div>
 
