@@ -10,7 +10,7 @@ export default function Differentials() {
         
         <div className="flex flex-col lg:flex-row gap-12 items-center">
           
-          {/* LADO ESQUERDO: Imagem do Caminhão */}
+          {/* LADO ESQUERDO: Imagem */}
           <div className="w-full lg:w-1/2 relative">
              <div className="mb-6 text-left">
                 <h2 className="text-3xl md:text-4xl uppercase leading-none">
@@ -22,11 +22,10 @@ export default function Differentials() {
 
              <div className="relative border-[10px] border-[#005e00] rounded-lg overflow-hidden shadow-2xl">
                <img 
-                 src="/images/transporteequipa.webp" 
+                 src="/images/transportedegraos.webp" 
                  alt="Caminhão AgroRicôrtes" 
                  className="w-full h-auto object-cover aspect-[3/4]"
                />
-               {/* LOGO REMOVIDA DAQUI */}
              </div>
           </div>
 
