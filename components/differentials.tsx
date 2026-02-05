@@ -22,7 +22,7 @@ export default function Differentials() {
 
              <div className="relative border-[10px] border-[#005e00] rounded-lg overflow-hidden shadow-2xl">
                <img 
-                 src="/images/transportedegraos.webp" 
+                 src="/images/imagemcolhendo.webp" 
                  alt="Caminhão AgroRicôrtes" 
                  className="w-full h-auto object-cover aspect-[3/4]"
                />
