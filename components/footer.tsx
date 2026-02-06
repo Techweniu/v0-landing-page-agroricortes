@@ -67,9 +67,8 @@ export default function Footer() {
                </div>
                <div className="pl-14 space-y-2">
                  <p className="text-gray-800 font-medium text-lg">(64) 9 9331-1111</p>
-                 <span className="inline-block bg-gray-200 text-gray-700 px-2 py-1 rounded text-lg font-medium">
-                   (64) 99236-3033
-                 </span>
+                 {/* ALTERAÇÃO AQUI: Removido background e padronizado estilo */}
+                 <p className="text-gray-800 font-medium text-lg">(64) 99236-3033</p>
                </div>
              </div>
 
@@ -118,7 +117,8 @@ export default function Footer() {
 
         {/* Copyright e Créditos */}
         <div className="text-center pt-8 border-t border-gray-100 mt-8 flex flex-col md:flex-row justify-center items-center gap-2">
-           <p className="text-gray-400 text-sm">© {new Date().getFullYear()} AgroRicôrtes. Todos os direitos reservados.</p>
+           {/* ALTERAÇÃO AQUI: Texto alterado para Ricôrtes */}
+           <p className="text-gray-400 text-sm">© {new Date().getFullYear()} Ricôrtes. Todos os direitos reservados.</p>
            <span className="hidden md:inline text-gray-300">|</span>
            <p className="text-gray-400 text-sm">
              Desenvolvido por <a href="https://www.weniu.com.br" target="_blank" rel="noreferrer" className="font-bold hover:text-[#ff6600] transition-colors">weniu</a>
