@@ -29,7 +29,8 @@ export default function WhoWeAre() {
                 </h2>
                 <div className="text-gray-700 text-lg space-y-6 leading-relaxed">
                 <p>
-                    A AgroRicôrtes é uma empresa especializada em pulverização, transporte de maquinários agrícolas e peças
+                    {/* ALTERAÇÃO AQUI: AgroRicôrtes -> Ricôrtes */}
+                    A Ricôrtes é uma empresa especializada em pulverização, transporte de maquinários agrícolas e peças
                     industriais.
                 </p>
                 <p>
