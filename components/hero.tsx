@@ -6,14 +6,13 @@ import { Menu, X, ArrowRight } from 'lucide-react';
 // LISTA DE IMAGENS (Ordem solicitada: 9, 1, 2, 3, 4, 5, 7)
 // Certifique-se de que todos esses arquivos (incluindo o 9.webp)
 // estejam dentro da pasta public/images do seu projeto.
-const HERO_IMAGES = [
-  "/images/9.webp",
+const HERO_IMAGES = [,
   "/images/1.webp",
   "/images/2.webp",
   "/images/3.webp",
   "/images/4.webp",
   "/images/5.webp",
-  "/images/7.webp"
+  "/images/6.webp"
 ];
 
 const Hero: React.FC = () => {
