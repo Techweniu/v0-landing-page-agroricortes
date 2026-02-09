@@ -3,18 +3,17 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ArrowRight } from 'lucide-react';
 
-// LISTA DE IMAGENS (1 a 8)
-// Certifique-se de que os arquivos 5.webp, 6.webp, 7.webp e 8.webp 
+// LISTA DE IMAGENS (Ordem solicitada: 9, 1, 2, 3, 4, 5, 7)
+// Certifique-se de que todos esses arquivos (incluindo o 9.webp)
 // estejam dentro da pasta public/images do seu projeto.
 const HERO_IMAGES = [
+  "/images/9.webp",
   "/images/1.webp",
   "/images/2.webp",
   "/images/3.webp",
   "/images/4.webp",
   "/images/5.webp",
-  "/images/6.webp",
-  "/images/7.webp",
-  "/images/8.webp"
+  "/images/7.webp"
 ];
 
 const Hero: React.FC = () => {
@@ -58,12 +57,12 @@ const Hero: React.FC = () => {
          
          {HERO_IMAGES.map((src, index) => (
            <img
-              key={src}
-              src={src}
-              alt={`Slide Agro ${index + 1}`}
-              className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${
-                index === currentImageIndex ? 'opacity-100' : 'opacity-0'
-              }`}
+             key={src}
+             src={src}
+             alt={`Slide Agro ${index + 1}`}
+             className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${
+               index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+             }`}
            />
          ))}
       </div>
@@ -151,9 +150,9 @@ const Hero: React.FC = () => {
            <div className="w-64 h-64 md:w-96 md:h-96 rounded-full bg-[#528d52]/80 backdrop-blur-sm flex items-center justify-center relative z-0 shadow-2xl">
               <div className="w-56 h-56 md:w-80 md:h-80 rounded-full bg-[#417641] border-4 border-white/20 overflow-hidden">
                 <img 
-                    src="/images/imagemeditada.webp" 
-                    alt="Agro Field"
-                    className="w-full h-full object-cover opacity-90"
+                   src="/images/imagemeditada.webp" 
+                   alt="Agro Field"
+                   className="w-full h-full object-cover opacity-90"
                 />
               </div>
               
