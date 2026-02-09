@@ -3,18 +3,26 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ArrowRight } from 'lucide-react';
 
-// LISTA DE VÍDEOS (Ordem alterada: Novo vídeo primeiro)
-const VIDEO_SOURCES = [
-  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/pranchaindustrial-lNaAYyQJDVe7HgZZksUG6NF1UMYz8W.mp4", // <--- Este agora é o primeiro
-  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/background-agro-sbNU9GjYxbiuHgUxhJZcMeXXWlZOQQ.mp4"
+// LISTA DE IMAGENS (1 a 8)
+// Certifique-se de que os arquivos 5.webp, 6.webp, 7.webp e 8.webp 
+// estejam dentro da pasta public/images do seu projeto.
+const HERO_IMAGES = [
+  "/images/1.webp",
+  "/images/2.webp",
+  "/images/3.webp",
+  "/images/4.webp",
+  "/images/5.webp",
+  "/images/6.webp",
+  "/images/7.webp",
+  "/images/8.webp"
 ];
 
 const Hero: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   
-  // O índice inicial é 0, então ele vai começar pelo primeiro da lista acima
-  const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
+  // Índice da imagem atual
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   // Efeito para detectar rolagem
   useEffect(() => {
@@ -23,11 +31,11 @@ const Hero: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Efeito para alternar os vídeos automaticamente (Transição)
+  // Efeito para alternar as imagens automaticamente
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentVideoIndex((prevIndex) => (prevIndex + 1) % VIDEO_SOURCES.length);
-    }, 8000); // Troca a cada 8 segundos
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % HERO_IMAGES.length);
+    }, 5000); // Troca a cada 5 segundos
 
     return () => clearInterval(interval);
   }, []);
@@ -44,23 +52,19 @@ const Hero: React.FC = () => {
   return (
     <div id="home" className="relative bg-[#417641] min-h-screen text-white overflow-hidden">
       
-      {/* --- BACKGROUND VIDEOS COM TRANSIÇÃO --- */}
+      {/* --- BACKGROUND IMAGES COM TRANSIÇÃO --- */}
       <div className="absolute inset-0 z-0 bg-black">
          <div className="absolute inset-0 bg-black/40 z-10"></div>
          
-         {VIDEO_SOURCES.map((src, index) => (
-           <video
+         {HERO_IMAGES.map((src, index) => (
+           <img
               key={src}
-              autoPlay
-              loop
-              muted
-              playsInline
+              src={src}
+              alt={`Slide Agro ${index + 1}`}
               className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${
-                index === currentVideoIndex ? 'opacity-100' : 'opacity-0'
+                index === currentImageIndex ? 'opacity-100' : 'opacity-0'
               }`}
-           >
-              <source src={src} type="video/mp4" />
-           </video>
+           />
          ))}
       </div>
 
