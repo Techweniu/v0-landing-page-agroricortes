@@ -89,7 +89,7 @@ const Contact: React.FC = () => {
                    className="w-full bg-[#25D366] hover:bg-[#128C7E] text-white font-bold py-4 px-8 rounded-lg transition-all transform hover:-translate-y-1 shadow-lg flex items-center justify-center gap-2 text-lg"
                 >
                    <MessageCircle size={24} />
-                   Iniciar conversa no WhatsApp
+                   Enviar
                 </button>
              </form>
         </div>
