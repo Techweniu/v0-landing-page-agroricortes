@@ -156,11 +156,7 @@ const Hero: React.FC = () => {
                     className="w-full h-full object-cover opacity-90"
                 />
               </div>
-              <div className="absolute -top-4 -right-4 bg-[#ff6600] p-3 rounded-full shadow-lg">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-              </div>
+              
            </div>
         </div>
       </div>
