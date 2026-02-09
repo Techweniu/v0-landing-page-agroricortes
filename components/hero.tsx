@@ -13,7 +13,7 @@ const HERO_IMAGES = [
   "/images/3.webp",
   "/images/4.webp",
   "/images/5.webp",
-  "/images/7.webp"
+  "/images/6.webp"
 ];
 
 const Hero: React.FC = () => {
