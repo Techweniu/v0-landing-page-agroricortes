@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     // Caso tenha outros formatos, você pode adicionar aqui também, por exemplo:
     // apple: "/images/apple-icon.png",
   },
-    generator: 'v0.app'
+    generator: 'weniu'
 };
 
 export default function RootLayout({
