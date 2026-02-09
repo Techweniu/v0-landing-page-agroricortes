@@ -113,7 +113,7 @@ const WorkWithUs: React.FC = () => {
                     onClick={() => setSuccess(false)}
                     className="text-[#ff6600] font-bold hover:underline"
                 >
-                    Enviar outra candidatura
+                    Enviar outro formulário
                 </button>
             </div>
         </div>
