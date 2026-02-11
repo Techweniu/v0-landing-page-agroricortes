@@ -5,7 +5,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "41eda",
+  title: "AgroRicôrtes",
   description: "Soluções agrícolas",
   // Adicionando o favicon conforme solicitado
   icons: {
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     // Caso tenha outros formatos, você pode adicionar aqui também, por exemplo:
     // apple: "/images/apple-icon.png",
   },
-    generator: 'weniu2'
+    generator: 'weniu'
 };
 
 export default function RootLayout({
