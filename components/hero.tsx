@@ -145,11 +145,10 @@ const Hero: React.FC = () => {
         </div>
 
         {/* Decorative Image/Element on the right */}
-        {/* ALTERAÇÃO 1: Adicionado 'md:justify-end' para mover para a direita no desktop */}
-        <div className="md:w-1/2 flex justify-center md:justify-end relative">
+        <div className="md:w-1/2 flex justify-center md:justify-end relative md:translate-x-16">
            <div className="w-64 h-64 md:w-96 md:h-96 rounded-full bg-[#528d52]/80 backdrop-blur-sm flex items-center justify-center relative z-0 shadow-2xl">
-             {/* ALTERAÇÃO 2: Mudado de 'border-4' para 'border-2' para um contorno mais fino */}
-             <div className="w-56 h-56 md:w-80 md:h-80 rounded-full bg-[#417641] border-2 border-white/20 overflow-hidden">
+             {/* ALTERAÇÃO: Opacidade da borda reduzida de /20 para /10 para parecer mais fina */}
+             <div className="w-56 h-56 md:w-80 md:h-80 rounded-full bg-[#417641] border border-white/10 overflow-hidden">
                <img 
                   src="/images/imagemeditada.webp" 
                   alt="Agro Field"
