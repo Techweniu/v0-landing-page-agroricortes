@@ -109,12 +109,12 @@ const Hero: React.FC = () => {
         {/* Mobile Nav Menu */}
         {isMenuOpen && (
           <div className="absolute top-full left-0 w-full bg-white z-50 p-6 flex flex-col space-y-4 shadow-xl border-t border-gray-100 text-gray-800">
-             <button onClick={() => scrollToSection('whoweare')} className="text-left font-bold hover:text-[#ff6600] py-2 border-b border-gray-100">Quem somos</button>
-             <button onClick={() => scrollToSection('services')} className="text-left font-bold hover:text-[#ff6600] py-2 border-b border-gray-100">Serviços</button>
-             <button onClick={() => scrollToSection('differentials')} className="text-left font-bold hover:text-[#ff6600] py-2 border-b border-gray-100">Diferenciais</button>
-             <button onClick={() => scrollToSection('about')} className="text-left font-bold hover:text-[#ff6600] py-2 border-b border-gray-100">Sobre</button>
-             <button onClick={() => scrollToSection('workwithus')} className="text-left font-bold hover:text-[#ff6600] py-2 border-b border-gray-100">Trabalhe conosco</button>
-             <button onClick={() => scrollToSection('contact')} className="bg-[#ff6600] text-white px-6 py-3 rounded-full w-full font-bold mt-2">Contato</button>
+              <button onClick={() => scrollToSection('whoweare')} className="text-left font-bold hover:text-[#ff6600] py-2 border-b border-gray-100">Quem somos</button>
+              <button onClick={() => scrollToSection('services')} className="text-left font-bold hover:text-[#ff6600] py-2 border-b border-gray-100">Serviços</button>
+              <button onClick={() => scrollToSection('differentials')} className="text-left font-bold hover:text-[#ff6600] py-2 border-b border-gray-100">Diferenciais</button>
+              <button onClick={() => scrollToSection('about')} className="text-left font-bold hover:text-[#ff6600] py-2 border-b border-gray-100">Sobre</button>
+              <button onClick={() => scrollToSection('workwithus')} className="text-left font-bold hover:text-[#ff6600] py-2 border-b border-gray-100">Trabalhe conosco</button>
+              <button onClick={() => scrollToSection('contact')} className="bg-[#ff6600] text-white px-6 py-3 rounded-full w-full font-bold mt-2">Contato</button>
           </div>
         )}
       </nav>
@@ -136,25 +136,28 @@ const Hero: React.FC = () => {
           
           <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
              <button 
-                onClick={() => scrollToSection('services')}
-                className="flex items-center justify-center gap-2 bg-[#ff6600] hover:bg-[#d95500] text-white font-bold py-4 px-8 rounded-full text-lg transition-all transform hover:scale-105 shadow-lg border-2 border-[#ff6600]"
+               onClick={() => scrollToSection('services')}
+               className="flex items-center justify-center gap-2 bg-[#ff6600] hover:bg-[#d95500] text-white font-bold py-4 px-8 rounded-full text-lg transition-all transform hover:scale-105 shadow-lg border-2 border-[#ff6600]"
              >
-                Nossos Serviços <ArrowRight size={20} />
+               Nossos Serviços <ArrowRight size={20} />
              </button>
           </div>
         </div>
 
         {/* Decorative Image/Element on the right */}
-        <div className="md:w-1/2 flex justify-center relative">
-           <div className="w-64 h-64 md:w-96 md:h-96 rounded-full bg-[#528d52]/80 backdrop-blur-sm flex items-center justify-center relative z-0 shadow-2xl">
-              <div className="w-56 h-56 md:w-80 md:h-80 rounded-full bg-[#417641] border-4 border-white/20 overflow-hidden">
-                <img 
-                   src="/images/imagemeditada.webp" 
-                   alt="Agro Field"
-                   className="w-full h-full object-cover opacity-90"
-                />
-              </div>
-              
+        <div className="md:w-1/2 flex justify-center md:justify-end relative md:translate-x-16">
+           {/* ALTERAÇÃO AQUI: Removido 'bg-[#528d52]/80 backdrop-blur-sm' e adicionado 'bg-white' */}
+           <div className="w-60 h-60 md:w-88 md:h-88 rounded-full bg-white flex items-center justify-center relative z-0 shadow-2xl">
+             
+             {/* Círculo interno */}
+             <div className="w-56 h-56 md:w-80 md:h-80 rounded-full bg-[#417641] border border-white/10 overflow-hidden">
+               <img 
+                  src="/images/imagemeditada.webp" 
+                  alt="Agro Field"
+                  className="w-full h-full object-cover opacity-90"
+               />
+             </div>
+             
            </div>
         </div>
       </div>
