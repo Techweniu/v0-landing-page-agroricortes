@@ -5,7 +5,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "AgroRicôrtes",
+  title: "41eda",
   description: "Soluções agrícolas",
   // Adicionando o favicon conforme solicitado
   icons: {
