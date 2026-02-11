@@ -146,8 +146,10 @@ const Hero: React.FC = () => {
 
         {/* Decorative Image/Element on the right */}
         <div className="md:w-1/2 flex justify-center md:justify-end relative md:translate-x-16">
-           <div className="w-64 h-64 md:w-96 md:h-96 rounded-full bg-[#528d52]/80 backdrop-blur-sm flex items-center justify-center relative z-0 shadow-2xl">
-             {/* ALTERAÇÃO: Opacidade da borda reduzida de /20 para /10 para parecer mais fina */}
+           {/* ALTERAÇÃO AQUI: Reduzi os tamanhos do círculo externo para w-60/h-60 (mobile) e md:w-88/md:h-88 (desktop) */}
+           <div className="w-60 h-60 md:w-88 md:h-88 rounded-full bg-[#528d52]/80 backdrop-blur-sm flex items-center justify-center relative z-0 shadow-2xl">
+             
+             {/* Círculo interno (tamanhos mantidos: w-56/h-56 e md:w-80/md:h-80) */}
              <div className="w-56 h-56 md:w-80 md:h-80 rounded-full bg-[#417641] border border-white/10 overflow-hidden">
                <img 
                   src="/images/imagemeditada.webp" 
